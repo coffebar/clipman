@@ -25,7 +25,7 @@ A few distros ship with clipman binaries in their official or unofficial repos.
 
 ## Usage
 
-Run the binary in your Sway session by adding `exec wl-paste -t text --watch clipman store` (or `exec wl-paste -t text --watch clipman store 1>> PATH/TO/LOGFILE 2>&1 &` to log errors) at the beginning of your config.
+Run the binary in your Sway session by adding `exec wl-paste -t text --watch clipman store` (or `exec wl-paste -t text --watch clipman store 1>> PATH/TO/LOGFILE 2>&1 &` to log errors) at the beginning of your config. It is highly recommended that you run clipman with the `--no-persist` option, see Known Issues.
 
 For primary clipboard support, also add `exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"` (note that both the `-p` in wl-paste and the `-P` in clipman are mandatory in this case).
 
