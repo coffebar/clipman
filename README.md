@@ -31,6 +31,9 @@ For primary clipboard support, also add `exec wl-paste -p -t text --watch clipma
 
 To query the history and select items, run the binary as `clipman pick -t wofi`. You can assign it to a keybinding: `bindsym $mod+h exec clipman pick -t wofi`.
 You can pass additional arguments to the selector like this: `clipman pick --tool wofi -T'--prompt=my-prompt -i'` (both `--prompt` and `-i` are flags of wofi).
+
+If you want to insert text right after you pick it, install `wtype` and assing `clipman pick -t wofi && wtype -M ctrl v -m ctrl`. This will emulate Ctrl+v after you pick some text. Note, if you want to paste into terminal emulator, probaly you need to use Ctrl+Shift+v: `wtype -M ctrl -M shift v -m ctrl -m shift`.
+
 You can use a custom selector like this: `clipman pick --print0 --tool=CUSTOM --tool-args="fzf --prompt 'pick > ' --bind 'tab:up' --cycle --read0"`.
 
 To remove items from history, `clipman clear -t wofi` and `clipman clear --all`.
